@@ -4,7 +4,7 @@ $script = <<SCRIPT
 
 echo Installing dependencies...
 sudo apt-get update
-sudo apt-get install -y unzip curl
+sudo apt-get install -y unzip curl tmux screen
 
 echo Fetching Consul...
 cd /tmp/
