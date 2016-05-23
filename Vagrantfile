@@ -21,7 +21,7 @@ ln -s /vagrant/files/bash_aliases /home/vagrant/.bash_aliases
 
 #### travis stuff ######
 local_ip=`/sbin/ifconfig  | grep 'inet addr:'| grep '172.20.20' | cut -d: -f2 | awk '{ print $1}'`
-consul agent  -atlas-join -atlas=butangero/infrastructure -atlas-token="VbigYxjTwWCCAA.atlasv1.4wj6dgZt1HMjc4BPLd2EsOB5VELYnJcaOCiSUIANnWVX2m1NyrHFzyWmjEyqnh6e4Ic" -server -bootstrap-expect 3     -data-dir /tmp/consul -node=$HOSTNAME -bind=$local_ip -config-dir=/etc/consul.d
+consul agent  -atlas-join -atlas=butangero/infrastructure -atlas-token="VbigYxjTwWCCAA.atlasv1.4wj6dgZt1HMjc4BPLd2EsOB5VELYnJcaOCiSUIANnWVX2m1NyrHFzyWmjEyqnh6e4Ic" -server -bootstrap-expect 3     -data-dir /tmp/consul -node=$HOSTNAME -bind=$local_ip -config-dir=/etc/consul.d >> /tmp/consul.out 2>&1 &
 
 
 SCRIPT
